@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# WRITTEN BY Eric Le Saux (elesaux@)
+#
 # Using Google's predictions when you enter in search:
 # "fifa world cup <country1> <country2>
 #
