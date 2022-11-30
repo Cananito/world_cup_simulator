@@ -20,7 +20,7 @@ import random
 import sys
 
 elo = {
-    'ARG': 2185,
+    'ARG': 2118,
     'AUS': 1779,
     'BEL': 1948,
     'BRA': 2195,
@@ -39,12 +39,12 @@ elo = {
     'IRN': 1779,
     'JPN': 1792,
     'KOR': 1750,
-    'MEX': 1779,
+    'MEX': 1813,
     'MOR': 1851,
-    'POL': 1844,
+    'POL': 1827,
     'POR': 2044,
     'QAT': 1578,
-    'SAU': 1662,
+    'SAU': 1643,
     'SEN': 1773,
     'SRB': 1862,
     'SWI': 1901,
@@ -98,8 +98,10 @@ gamesGroupC = [
     {'home': 'POL', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'SAU'},
     # {'home': 'ARG', 'win': 61, 'draw': 24, 'loss': 15, 'away': 'MEX'},
     {'home': 'ARG', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'MEX'},
-    {'home': 'POL', 'win': 13, 'draw': 21, 'loss': 66, 'away': 'ARG'},
-    {'home': 'SAU', 'win': 18, 'draw': 22, 'loss': 60, 'away': 'MEX'},
+    # {'home': 'POL', 'win': 13, 'draw': 21, 'loss': 66, 'away': 'ARG'},
+    {'home': 'POL', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'ARG'},
+    # {'home': 'SAU', 'win': 18, 'draw': 22, 'loss': 60, 'away': 'MEX'},
+    {'home': 'SAU', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'MEX'},
 ]
 
 gamesGroupD = [
