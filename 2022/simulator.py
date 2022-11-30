@@ -21,18 +21,18 @@ import sys
 
 elo = {
     'ARG': 2185,
-    'AUS': 1734,
+    'AUS': 1779,
     'BEL': 1948,
     'BRA': 2195,
     'CAM': 1621,
     'CAN': 1732,
     'CRC': 1762,
     'CRO': 1945,
-    'DEN': 1928,
+    'DEN': 1883,
     'ECU': 1842,
     'ENG': 1969,
     'ESP': 2056,
-    'FRA': 2046,
+    'FRA': 1993,
     'GER': 1931,
     'GHA': 1611,
     'HOL': 2047,
@@ -48,7 +48,7 @@ elo = {
     'SEN': 1773,
     'SRB': 1862,
     'SWI': 1901,
-    'TUN': 1694,
+    'TUN': 1747,
     'URU': 1890,
     'USA': 1840,
     'WAL': 1717,
@@ -111,8 +111,9 @@ gamesGroupD = [
     {'home': 'TUN', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'AUS'},
     # {'home': 'FRA', 'win': 47, 'draw': 28, 'loss': 25, 'away': 'DEN'},
     {'home': 'FRA', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'DEN'},
-    {'home': 'TUN', 'win': 15, 'draw': 23, 'loss': 62, 'away': 'FRA'},
-    {'home': 'AUS', 'win': 14, 'draw': 21, 'loss': 65, 'away': 'DEN'},
+    # {'home': 'TUN', 'win': 15, 'draw': 23, 'loss': 62, 'away': 'FRA'},
+    {'home': 'TUN', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'FRA'},
+    {'home': 'AUS', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'DEN'},
 ]
 
 gamesGroupE = [
