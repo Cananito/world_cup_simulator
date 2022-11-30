@@ -171,9 +171,9 @@ gamesGroupH = [
 ]
 
 groupStage = [
-    {'name': 'A', 'games': gamesGroupA, 'final': {}},
-    {'name': 'B', 'games': gamesGroupB, 'final': {}},
-    {'name': 'C', 'games': gamesGroupC, 'final': {}},
+    {'name': 'A', 'games': gamesGroupA, 'final': {'HOL': 1, 'SEN': 2}},
+    {'name': 'B', 'games': gamesGroupB, 'final': {'ENG': 1, 'USA': 2}},
+    {'name': 'C', 'games': gamesGroupC, 'final': {'ARG': 1, 'POL': 2}},
     {'name': 'D', 'games': gamesGroupD, 'final': {}},
     {'name': 'E', 'games': gamesGroupE, 'final': {}},
     {'name': 'F', 'games': gamesGroupF, 'final': {}},
