@@ -25,7 +25,7 @@ elo = {
     'BEL': 1948,
     'BRA': 2195,
     'CAM': 1621,
-    'CAN': 1732,
+    'CAN': 1712,
     'CRC': 1762,
     'CRO': 1945,
     'DEN': 1883,
@@ -40,7 +40,7 @@ elo = {
     'JPN': 1792,
     'KOR': 1750,
     'MEX': 1813,
-    'MOR': 1851,
+    'MOR': 1871,
     'POL': 1827,
     'POR': 2044,
     'QAT': 1578,
@@ -140,8 +140,10 @@ gamesGroupF = [
     {'home': 'BEL', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'MOR'},
     # {'home': 'CRO', 'win': 43, 'draw': 29, 'loss': 28, 'away': 'CAN'},
     {'home': 'CRO', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'CAN'},
-    {'home': 'CRO', 'win': 35, 'draw': 28, 'loss': 37, 'away': 'BEL'},
-    {'home': 'CAN', 'win': 26, 'draw': 27, 'loss': 47, 'away': 'MOR'},
+    # {'home': 'CRO', 'win': 35, 'draw': 28, 'loss': 37, 'away': 'BEL'},
+    {'home': 'CRO', 'win': 0, 'draw': 100, 'loss': 0, 'away': 'BEL'},
+    # {'home': 'CAN', 'win': 26, 'draw': 27, 'loss': 47, 'away': 'MOR'},
+    {'home': 'CAN', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'MOR'},
 ]
 
 gamesGroupG = [
@@ -176,7 +178,7 @@ groupStage = [
     {'name': 'C', 'games': gamesGroupC, 'final': {'ARG': 1, 'POL': 2, 'MEX': 3, 'SAU': 4}},
     {'name': 'D', 'games': gamesGroupD, 'final': {'FRA': 1, 'AUS': 2, 'TUN': 3, 'DEN': 4}},
     {'name': 'E', 'games': gamesGroupE, 'final': {}},
-    {'name': 'F', 'games': gamesGroupF, 'final': {}},
+    {'name': 'F', 'games': gamesGroupF, 'final': {'MOR': 1, 'CRO': 2, 'BEL': 3, 'CAN': 4}},
     {'name': 'G', 'games': gamesGroupG, 'final': {}},
     {'name': 'H', 'games': gamesGroupH, 'final': {}}
 ]
