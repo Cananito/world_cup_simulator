@@ -185,7 +185,7 @@ groupStage = [
     {'name': 'D', 'games': gamesGroupD, 'final': {'FRA': 1, 'AUS': 2, 'TUN': 3, 'DEN': 4}},
     {'name': 'E', 'games': gamesGroupE, 'final': {'JPN': 1, 'ESP': 2, 'GER': 3, 'CRC': 4}},
     {'name': 'F', 'games': gamesGroupF, 'final': {'MOR': 1, 'CRO': 2, 'BEL': 3, 'CAN': 4}},
-    {'name': 'G', 'games': gamesGroupG, 'final': {'BRA': 1, 'SWI': 2, 'CAM': 3, 'SEB': 4}},
+    {'name': 'G', 'games': gamesGroupG, 'final': {'BRA': 1, 'SWI': 2, 'CAM': 3, 'SRB': 4}},
     {'name': 'H', 'games': gamesGroupH, 'final': {'POR': 1, 'KOR': 2, 'URU': 3, 'GHA': 4}}
 ]
 
