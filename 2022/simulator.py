@@ -23,8 +23,8 @@ elo = {
     'ARG': 2118,
     'AUS': 1779,
     'BEL': 1948,
-    'BRA': 2195,
-    'CAM': 1621,
+    'BRA': 2137,
+    'CAM': 1679,
     'CAN': 1712,
     'CRC': 1737,
     'CRO': 1945,
@@ -46,8 +46,8 @@ elo = {
     'QAT': 1578,
     'SAU': 1643,
     'SEN': 1773,
-    'SRB': 1862,
-    'SWI': 1901,
+    'SRB': 1835,
+    'SWI': 1928,
     'TUN': 1747,
     'URU': 1905,
     'USA': 1840,
@@ -157,8 +157,10 @@ gamesGroupG = [
     {'home': 'CAM', 'win': 0, 'draw': 100, 'loss': 0, 'away': 'SRB'},
     # {'home': 'BRA', 'win': 70, 'draw': 19, 'loss': 11, 'away': 'SWI'},
     {'home': 'BRA', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'SWI'},
-    {'home': 'SRB', 'win': 38, 'draw': 29, 'loss': 33, 'away': 'SWI'},
-    {'home': 'CAM', 'win': 8, 'draw': 14, 'loss': 78, 'away': 'BRA'},
+    # {'home': 'SRB', 'win': 38, 'draw': 29, 'loss': 33, 'away': 'SWI'},
+    {'home': 'SRB', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'SWI'},
+    # {'home': 'CAM', 'win': 8, 'draw': 14, 'loss': 78, 'away': 'BRA'},
+    {'home': 'CAM', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'BRA'},
 ]
 
 gamesGroupH = [
@@ -183,7 +185,7 @@ groupStage = [
     {'name': 'D', 'games': gamesGroupD, 'final': {'FRA': 1, 'AUS': 2, 'TUN': 3, 'DEN': 4}},
     {'name': 'E', 'games': gamesGroupE, 'final': {'JPN': 1, 'ESP': 2, 'GER': 3, 'CRC': 4}},
     {'name': 'F', 'games': gamesGroupF, 'final': {'MOR': 1, 'CRO': 2, 'BEL': 3, 'CAN': 4}},
-    {'name': 'G', 'games': gamesGroupG, 'final': {}},
+    {'name': 'G', 'games': gamesGroupG, 'final': {'BRA': 1, 'SWI': 2, 'CAM': 3, 'SEB': 4}},
     {'name': 'H', 'games': gamesGroupH, 'final': {'POR': 1, 'KOR': 2, 'URU': 3, 'GHA': 4}}
 ]
 
