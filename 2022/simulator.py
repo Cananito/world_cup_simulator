@@ -34,22 +34,22 @@ elo = {
     'ESP': 2007,
     'FRA': 1993,
     'GER': 1956,
-    'GHA': 1611,
+    'GHA': 1596,
     'HOL': 2047,
     'IRN': 1779,
     'JPN': 1841,
-    'KOR': 1750,
+    'KOR': 1801,
     'MEX': 1813,
     'MOR': 1871,
     'POL': 1827,
-    'POR': 2044,
+    'POR': 1993,
     'QAT': 1578,
     'SAU': 1643,
     'SEN': 1773,
     'SRB': 1862,
     'SWI': 1901,
     'TUN': 1747,
-    'URU': 1890,
+    'URU': 1905,
     'USA': 1840,
     'WAL': 1717,
 }
@@ -170,8 +170,10 @@ gamesGroupH = [
     {'home': 'KOR', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'GHA'},
     # {'home': 'POR', 'win': 49, 'draw': 28, 'loss': 23, 'away': 'URU'},
     {'home': 'POR', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'URU'},
-    {'home': 'KOR', 'win': 17, 'draw': 23, 'loss': 60, 'away': 'POR'},
-    {'home': 'GHA', 'win': 19, 'draw': 24, 'loss': 57, 'away': 'URU'},
+    # {'home': 'KOR', 'win': 17, 'draw': 23, 'loss': 60, 'away': 'POR'},
+    {'home': 'KOR', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'POR'},
+    # {'home': 'GHA', 'win': 19, 'draw': 24, 'loss': 57, 'away': 'URU'},
+    {'home': 'GHA', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'URU'},
 ]
 
 groupStage = [
@@ -182,7 +184,7 @@ groupStage = [
     {'name': 'E', 'games': gamesGroupE, 'final': {'JPN': 1, 'ESP': 2, 'GER': 3, 'CRC': 4}},
     {'name': 'F', 'games': gamesGroupF, 'final': {'MOR': 1, 'CRO': 2, 'BEL': 3, 'CAN': 4}},
     {'name': 'G', 'games': gamesGroupG, 'final': {}},
-    {'name': 'H', 'games': gamesGroupH, 'final': {}}
+    {'name': 'H', 'games': gamesGroupH, 'final': {'POR': 1, 'KOR': 2, 'URU': 3, 'GHA': 4}}
 ]
 
 def buildZeroedResults(games):
