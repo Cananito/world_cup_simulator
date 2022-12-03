@@ -35,7 +35,7 @@ elo = {
     'FRA': 1993,
     'GER': 1956,
     'GHA': 1596,
-    'HOL': 2068,
+    'NED': 2068,
     'IRN': 1779,
     'JPN': 1841,
     'KOR': 1801,
@@ -62,16 +62,16 @@ def winProbability(country1, country2):
 gamesGroupA = [
     # {'home': 'QAT', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'ECU'},
     {'home': 'QAT', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'ECU'},
-    # {'home': 'SEN', 'win': 15, 'draw': 23, 'loss': 62, 'away': 'HOL'},
-    {'home': 'SEN', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'HOL'},
+    # {'home': 'SEN', 'win': 15, 'draw': 23, 'loss': 62, 'away': 'NED'},
+    {'home': 'SEN', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'NED'},
     # {'home': 'QAT', 'win': 17, 'draw': 25, 'loss': 58, 'away': 'SEN'},
     {'home': 'QAT', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'SEN'},
-    # {'home': 'HOL', 'win': 53, 'draw': 27, 'loss': 20, 'away': 'ECU'},
-    {'home': 'HOL', 'win': 0, 'draw': 100, 'loss': 0, 'away': 'ECU'},
+    # {'home': 'NED', 'win': 53, 'draw': 27, 'loss': 20, 'away': 'ECU'},
+    {'home': 'NED', 'win': 0, 'draw': 100, 'loss': 0, 'away': 'ECU'},
     # {'home': 'ECU', 'win': 39, 'draw': 30, 'loss': 31, 'away': 'SEN'},
     {'home': 'ECU', 'win': 0, 'draw': 0, 'loss': 100, 'away': 'SEN'},
-    # {'home': 'HOL', 'win': 84, 'draw': 11, 'loss': 5, 'away': 'QAT'},
-    {'home': 'HOL', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'QAT'},
+    # {'home': 'NED', 'win': 84, 'draw': 11, 'loss': 5, 'away': 'QAT'},
+    {'home': 'NED', 'win': 100, 'draw': 0, 'loss': 0, 'away': 'QAT'},
 ]
 
 gamesGroupB = [
@@ -179,7 +179,7 @@ gamesGroupH = [
 ]
 
 groupStage = [
-    {'name': 'A', 'games': gamesGroupA, 'final': {'HOL': 1, 'SEN': 2, 'ECU': 3, 'QAT': 4}},
+    {'name': 'A', 'games': gamesGroupA, 'final': {'NED': 1, 'SEN': 2, 'ECU': 3, 'QAT': 4}},
     {'name': 'B', 'games': gamesGroupB, 'final': {'ENG': 1, 'USA': 2, 'IRN': 3, 'WAL': 4}},
     {'name': 'C', 'games': gamesGroupC, 'final': {'ARG': 1, 'POL': 2, 'MEX': 3, 'SAU': 4}},
     {'name': 'D', 'games': gamesGroupD, 'final': {'FRA': 1, 'AUS': 2, 'TUN': 3, 'DEN': 4}},
@@ -448,7 +448,7 @@ eliminated = {
     'FRA': [0,0,0,0,0,0],
     'GER': [0,0,0,0,0,0],
     'GHA': [0,0,0,0,0,0],
-    'HOL': [0,0,0,0,0,0],
+    'NED': [0,0,0,0,0,0],
     'IRN': [0,0,0,0,0,0],
     'JPN': [0,0,0,0,0,0],
     'KOR': [0,0,0,0,0,0],
