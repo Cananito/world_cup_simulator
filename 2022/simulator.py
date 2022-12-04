@@ -309,10 +309,11 @@ def simulateKnockoutGames(groupResults):
   # winner[49], loser[49] = knockout(groupResults['1A'], groupResults['2B'])
   winner[49], loser[49] = (groupResults['1A'], groupResults['2B']) # Netherlands beats USA.
   # winner[50], loser[50] = knockout(groupResults['1C'], groupResults['2D'])
-  winner[50], loser[50] = (groupResults['1C'], groupResults['2D']) # France beats Poland.
+  winner[50], loser[50] = (groupResults['1C'], groupResults['2D']) # Argentina beats Australia.
   # winner[51], loser[51] = knockout(groupResults['1B'], groupResults['2A'])
   winner[51], loser[51] = (groupResults['1B'], groupResults['2A']) # England beats Senegal.
-  winner[52], loser[52] = knockout(groupResults['1D'], groupResults['2C'])
+  # winner[52], loser[52] = knockout(groupResults['1D'], groupResults['2C'])
+  winner[52], loser[52] = (groupResults['1D'], groupResults['2C']) # France beats Poland.
   winner[53], loser[53] = knockout(groupResults['1E'], groupResults['2F'])
   winner[54], loser[54] = knockout(groupResults['1G'], groupResults['2H'])
   winner[55], loser[55] = knockout(groupResults['1F'], groupResults['2E'])
