@@ -32,7 +32,7 @@ elo = {
     'ECU': 1842,
     'ENG': 1969,
     'ESP': 2007,
-    'FRA': 1993,
+    'FRA': 2018,
     'GER': 1956,
     'GHA': 1596,
     'IRN': 1779,
@@ -41,7 +41,7 @@ elo = {
     'MEX': 1813,
     'MOR': 1871,
     'NED': 2068,
-    'POL': 1827,
+    'POL': 1802,
     'POR': 1993,
     'QAT': 1578,
     'SAU': 1643,
@@ -308,7 +308,8 @@ def simulateKnockoutGames(groupResults):
   # Group of 16
   # winner[49], loser[49] = knockout(groupResults['1A'], groupResults['2B'])
   winner[49], loser[49] = (groupResults['1A'], groupResults['2B']) # Netherlands beats USA.
-  winner[50], loser[50] = knockout(groupResults['1C'], groupResults['2D'])
+  # winner[50], loser[50] = knockout(groupResults['1C'], groupResults['2D'])
+  winner[50], loser[50] = (groupResults['1C'], groupResults['2D']) # France beats Poland.
   winner[51], loser[51] = knockout(groupResults['1B'], groupResults['2A'])
   winner[52], loser[52] = knockout(groupResults['1D'], groupResults['2C'])
   winner[53], loser[53] = knockout(groupResults['1E'], groupResults['2F'])
