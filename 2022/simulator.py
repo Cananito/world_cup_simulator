@@ -23,7 +23,7 @@ elo = {
     'ARG': 2118,
     'AUS': 1779,
     'BEL': 1948,
-    'BRA': 2137,
+    'BRA': 2150,
     'CAM': 1679,
     'CAN': 1712,
     'CRC': 1737,
@@ -37,7 +37,7 @@ elo = {
     'GHA': 1596,
     'IRN': 1779,
     'JPN': 1850,
-    'KOR': 1801,
+    'KOR': 1788,
     'MEX': 1813,
     'MOR': 1871,
     'NED': 2068,
@@ -316,7 +316,8 @@ def simulateKnockoutGames(groupResults):
   winner[52], loser[52] = (groupResults['1D'], groupResults['2C']) # France beats Poland.
   # winner[53], loser[53] = knockout(groupResults['1E'], groupResults['2F'])
   winner[53], loser[53] = (groupResults['2F'], groupResults['1E']) # Croatia beats Japan.
-  winner[54], loser[54] = knockout(groupResults['1G'], groupResults['2H'])
+  # winner[54], loser[54] = knockout(groupResults['1G'], groupResults['2H'])
+  winner[54], loser[54] = (groupResults['1G'], groupResults['2H']) # Brazil beats South Korea.
   winner[55], loser[55] = knockout(groupResults['1F'], groupResults['2E'])
   winner[56], loser[56] = knockout(groupResults['1H'], groupResults['2G'])
 
