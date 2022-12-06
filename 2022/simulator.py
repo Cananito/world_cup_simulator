@@ -31,7 +31,7 @@ elo = {
     'DEN': 1883,
     'ECU': 1842,
     'ENG': 1995,
-    'ESP': 2007,
+    'ESP': 1996,
     'FRA': 2018,
     'GER': 1956,
     'GHA': 1596,
@@ -39,7 +39,7 @@ elo = {
     'JPN': 1850,
     'KOR': 1788,
     'MEX': 1813,
-    'MOR': 1871,
+    'MOR': 1882,
     'NED': 2068,
     'POL': 1802,
     'POR': 1993,
@@ -318,7 +318,8 @@ def simulateKnockoutGames(groupResults):
   winner[53], loser[53] = (groupResults['2F'], groupResults['1E']) # Croatia beats Japan.
   # winner[54], loser[54] = knockout(groupResults['1G'], groupResults['2H'])
   winner[54], loser[54] = (groupResults['1G'], groupResults['2H']) # Brazil beats South Korea.
-  winner[55], loser[55] = knockout(groupResults['1F'], groupResults['2E'])
+  # winner[55], loser[55] = knockout(groupResults['1F'], groupResults['2E'])
+  winner[55], loser[55] = (groupResults['1F'], groupResults['2E']) # Morocco beats Spain.
   winner[56], loser[56] = knockout(groupResults['1H'], groupResults['2G'])
 
   # Quarter-Finals
