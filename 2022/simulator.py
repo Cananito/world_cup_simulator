@@ -42,12 +42,12 @@ elo = {
     'MOR': 1882,
     'NED': 2068,
     'POL': 1802,
-    'POR': 1993,
+    'POR': 2042,
     'QAT': 1578,
     'SAU': 1643,
     'SEN': 1747,
     'SRB': 1835,
-    'SWI': 1928,
+    'SWI': 1879,
     'TUN': 1747,
     'URU': 1905,
     'USA': 1819,
@@ -320,7 +320,8 @@ def simulateKnockoutGames(groupResults):
   winner[54], loser[54] = (groupResults['1G'], groupResults['2H']) # Brazil beats South Korea.
   # winner[55], loser[55] = knockout(groupResults['1F'], groupResults['2E'])
   winner[55], loser[55] = (groupResults['1F'], groupResults['2E']) # Morocco beats Spain.
-  winner[56], loser[56] = knockout(groupResults['1H'], groupResults['2G'])
+  # winner[56], loser[56] = knockout(groupResults['1H'], groupResults['2G'])
+  winner[56], loser[56] = (groupResults['1H'], groupResults['2G']) # Portugal beats Switzerland.
 
   # Quarter-Finals
   winner[57], loser[57] = knockout(winner[49], winner[50])
