@@ -20,14 +20,14 @@ import random
 import sys
 
 elo = {
-    'ARG': 2118,
+    'ARG': 2120,
     'AUS': 1779,
     'BEL': 1948,
-    'BRA': 2150,
+    'BRA': 2134,
     'CAM': 1679,
     'CAN': 1712,
     'CRC': 1737,
-    'CRO': 1936,
+    'CRO': 1952,
     'DEN': 1883,
     'ECU': 1842,
     'ENG': 1995,
@@ -40,7 +40,7 @@ elo = {
     'KOR': 1788,
     'MEX': 1813,
     'MOR': 1882,
-    'NED': 2068,
+    'NED': 2073,
     'POL': 1802,
     'POR': 2042,
     'QAT': 1578,
@@ -324,8 +324,10 @@ def simulateKnockoutGames(groupResults):
   winner[56], loser[56] = (groupResults['1H'], groupResults['2G']) # Portugal beats Switzerland.
 
   # Quarter-Finals
-  winner[57], loser[57] = knockout(winner[49], winner[50])
-  winner[58], loser[58] = knockout(winner[53], winner[54])
+  # winner[57], loser[57] = knockout(winner[49], winner[50])
+  winner[57], loser[57] = (winner[50], winner[49]) # Argentina beats Netherlands.
+  # winner[58], loser[58] = knockout(winner[53], winner[54])
+  winner[58], loser[58] = (winner[53], winner[54]) # Croatia beats Brazil.
   winner[59], loser[59] = knockout(winner[51], winner[52])
   winner[60], loser[60] = knockout(winner[55], winner[56])
 
