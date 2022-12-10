@@ -30,19 +30,19 @@ elo = {
     'CRO': 1952,
     'DEN': 1883,
     'ECU': 1842,
-    'ENG': 1995,
+    'ENG': 1967,
     'ESP': 1996,
-    'FRA': 2018,
+    'FRA': 2046,
     'GER': 1956,
     'GHA': 1596,
     'IRN': 1779,
     'JPN': 1850,
     'KOR': 1788,
     'MEX': 1813,
-    'MOR': 1882,
+    'MOR': 1925,
     'NED': 2073,
     'POL': 1802,
-    'POR': 2042,
+    'POR': 1999,
     'QAT': 1578,
     'SAU': 1643,
     'SEN': 1747,
@@ -328,8 +328,10 @@ def simulateKnockoutGames(groupResults):
   winner[57], loser[57] = (winner[50], winner[49]) # Argentina beats Netherlands.
   # winner[58], loser[58] = knockout(winner[53], winner[54])
   winner[58], loser[58] = (winner[53], winner[54]) # Croatia beats Brazil.
-  winner[59], loser[59] = knockout(winner[51], winner[52])
-  winner[60], loser[60] = knockout(winner[55], winner[56])
+  # winner[59], loser[59] = knockout(winner[51], winner[52])
+  winner[59], loser[59] = (winner[52], winner[51]) # France beats England.
+  # winner[60], loser[60] = knockout(winner[55], winner[56])
+  winner[60], loser[60] = (winner[55], winner[56]) # Morocco beats Portugal.
 
   # Semi-finals
   winner[61], loser[61] = knockout(winner[57], winner[58])
