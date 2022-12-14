@@ -335,9 +335,9 @@ def simulateKnockoutGames(groupResults):
 
   # Semi-finals
   # winner[61], loser[61] = knockout(winner[57], winner[58])
-  winner[61], loser[61] = knockout(winner[57], winner[58]) # Argentina beats Croatia.
+  winner[61], loser[61] = (winner[57], winner[58]) # Argentina beats Croatia.
   # winner[62], loser[62] = knockout(winner[59], winner[60])
-  winner[62], loser[62] = knockout(winner[59], winner[60]) # France beats Morocco.
+  winner[62], loser[62] = (winner[59], winner[60]) # France beats Morocco.
 
   # Final
   winner[63], loser[63] = knockout(loser[61], loser[62])
