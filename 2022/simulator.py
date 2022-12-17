@@ -27,7 +27,7 @@ elo = {
     'CAM': 1679,
     'CAN': 1712,
     'CRC': 1737,
-    'CRO': 1923,
+    'CRO': 1951,
     'DEN': 1883,
     'ECU': 1842,
     'ENG': 1967,
@@ -39,7 +39,7 @@ elo = {
     'JPN': 1850,
     'KOR': 1788,
     'MEX': 1813,
-    'MOR': 1895,
+    'MOR': 1867,
     'NED': 2073,
     'POL': 1802,
     'POR': 1999,
@@ -340,7 +340,8 @@ def simulateKnockoutGames(groupResults):
   winner[62], loser[62] = (winner[59], winner[60]) # France beats Morocco.
 
   # Final
-  winner[63], loser[63] = knockout(loser[61], loser[62])
+  # winner[63], loser[63] = knockout(loser[61], loser[62])
+  winner[63], loser[63] = (loser[61], loser[62]) # Croatia beats Morocco.
   winner[64], loser[64] = knockout(winner[61], winner[62])
 
   return (winner, loser)
