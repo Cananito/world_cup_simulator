@@ -20,7 +20,7 @@ import random
 import sys
 
 elo = {
-    'ARG': 2149,
+    'ARG': 2143,
     'AUS': 1779,
     'BEL': 1948,
     'BRA': 2134,
@@ -32,7 +32,7 @@ elo = {
     'ECU': 1842,
     'ENG': 1967,
     'ESP': 1996,
-    'FRA': 2076,
+    'FRA': 2082,
     'GER': 1956,
     'GHA': 1596,
     'IRN': 1779,
@@ -342,7 +342,8 @@ def simulateKnockoutGames(groupResults):
   # Final
   # winner[63], loser[63] = knockout(loser[61], loser[62])
   winner[63], loser[63] = (loser[61], loser[62]) # Croatia beats Morocco.
-  winner[64], loser[64] = knockout(winner[61], winner[62])
+  # winner[64], loser[64] = knockout(winner[61], winner[62])
+  winner[64], loser[64] = (winner[61], winner[62]) # Argentina beats France.
 
   return (winner, loser)
 
