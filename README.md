@@ -1,4 +1,4 @@
-# WorldCupSimulator
+# world_cup_simulator
 
 ## Usage
 
