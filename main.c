@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // TODO: Make it so each year's data is either loaded and parsed or #included.
 
@@ -7,12 +8,14 @@
 
 // Elo ratings: https://www.eloratings.net/
 
+#define COUNTRY_COUNT 48
+
 struct Country {
   char country_name[20];
 };
 
 struct CountryElo {
-  struct Country country;
+  struct Country const* country;
   uint16_t elo_rating;
 };
 
@@ -25,6 +28,15 @@ enum Placement {
   THIRD_PLACE, // Won third place match.
   SECOND_PLACE, // Lost final.
   FIRST_PLACE, // Won final.
+};
+
+struct CountryResult {
+  struct Country const* country;
+  enum Placement placement;
+};
+
+struct SimulationResults {
+  struct CountryResult country_results[COUNTRY_COUNT];
 };
 
 struct Country const algeria = { .country_name = "Algeria" };
@@ -76,63 +88,67 @@ struct Country const uzbekistan = { .country_name = "Uzbekistan" };
 // { .country_name = "<IC Path 1 winner>" };
 // { .country_name = "<IC Path 2 winner>" },
 
-struct CountryElo country_elos[] = {
-  { .country = australia, .elo_rating = 0 },
-  { .country = algeria, .elo_rating = 0 },
-  { .country = argentina, .elo_rating = 0 },
-  { .country = australia, .elo_rating = 0 },
-  { .country = austria, .elo_rating = 0 },
-  { .country = belgium, .elo_rating = 0 },
-  { .country = brazil, .elo_rating = 0 },
-  { .country = canada, .elo_rating = 0 },
-  { .country = cape_verde, .elo_rating = 0 },
-  { .country = colombia, .elo_rating = 0 },
-  { .country = croatia, .elo_rating = 0 },
-  { .country = curacao, .elo_rating = 0 },
-  { .country = ecuador, .elo_rating = 0 },
-  { .country = egypt, .elo_rating = 0 },
-  { .country = england, .elo_rating = 0 },
-  { .country = france, .elo_rating = 0 },
-  { .country = germany, .elo_rating = 0 },
-  { .country = ghana, .elo_rating = 0 },
-  { .country = haiti, .elo_rating = 0 },
-  { .country = iran, .elo_rating = 0 },
-  { .country = ivory_coast, .elo_rating = 0 },
-  { .country = japan, .elo_rating = 0 },
-  { .country = jordan, .elo_rating = 0 },
-  { .country = mexico, .elo_rating = 0 },
-  { .country = moroco, .elo_rating = 0 },
-  { .country = netherlands, .elo_rating = 0 },
-  { .country = new_zeland, .elo_rating = 0 },
-  { .country = norway, .elo_rating = 0 },
-  { .country = panama, .elo_rating = 0 },
-  { .country = paraguay, .elo_rating = 0 },
-  { .country = portugal, .elo_rating = 0 },
-  { .country = qatar, .elo_rating = 0 },
-  { .country = saudi_arabia, .elo_rating = 0 },
-  { .country = scotland, .elo_rating = 0 },
-  { .country = senegal, .elo_rating = 0 },
-  { .country = south_africa, .elo_rating = 0 },
-  { .country = south_korea, .elo_rating = 0 },
-  { .country = spain, .elo_rating = 0 },
-  { .country = switzerland, .elo_rating = 0 },
-  { .country = tunisia, .elo_rating = 0 },
-  { .country = uruguay, .elo_rating = 0 },
-  { .country = usa, .elo_rating = 0 },
-  { .country = uzbekistan, .elo_rating = 0 },
+struct CountryElo country_elos[COUNTRY_COUNT] = {
+  { .country = &australia, .elo_rating = 0 },
+  { .country = &algeria, .elo_rating = 0 },
+  { .country = &argentina, .elo_rating = 0 },
+  { .country = &australia, .elo_rating = 0 },
+  { .country = &austria, .elo_rating = 0 },
+  { .country = &belgium, .elo_rating = 0 },
+  { .country = &brazil, .elo_rating = 0 },
+  { .country = &canada, .elo_rating = 0 },
+  { .country = &cape_verde, .elo_rating = 0 },
+  { .country = &colombia, .elo_rating = 0 },
+  { .country = &croatia, .elo_rating = 0 },
+  { .country = &curacao, .elo_rating = 0 },
+  { .country = &ecuador, .elo_rating = 0 },
+  { .country = &egypt, .elo_rating = 0 },
+  { .country = &england, .elo_rating = 0 },
+  { .country = &france, .elo_rating = 0 },
+  { .country = &germany, .elo_rating = 0 },
+  { .country = &ghana, .elo_rating = 0 },
+  { .country = &haiti, .elo_rating = 0 },
+  { .country = &iran, .elo_rating = 0 },
+  { .country = &ivory_coast, .elo_rating = 0 },
+  { .country = &japan, .elo_rating = 0 },
+  { .country = &jordan, .elo_rating = 0 },
+  { .country = &mexico, .elo_rating = 0 },
+  { .country = &moroco, .elo_rating = 0 },
+  { .country = &netherlands, .elo_rating = 0 },
+  { .country = &new_zeland, .elo_rating = 0 },
+  { .country = &norway, .elo_rating = 0 },
+  { .country = &panama, .elo_rating = 0 },
+  { .country = &paraguay, .elo_rating = 0 },
+  { .country = &portugal, .elo_rating = 0 },
+  { .country = &qatar, .elo_rating = 0 },
+  { .country = &saudi_arabia, .elo_rating = 0 },
+  { .country = &scotland, .elo_rating = 0 },
+  { .country = &senegal, .elo_rating = 0 },
+  { .country = &south_africa, .elo_rating = 0 },
+  { .country = &south_korea, .elo_rating = 0 },
+  { .country = &spain, .elo_rating = 0 },
+  { .country = &switzerland, .elo_rating = 0 },
+  { .country = &tunisia, .elo_rating = 0 },
+  { .country = &uruguay, .elo_rating = 0 },
+  { .country = &usa, .elo_rating = 0 },
+  { .country = &uzbekistan, .elo_rating = 0 },
 };
 
-static void run_simulation(void* results) {
+static void run_simulation(struct SimulationResults* simulation_results) {
   // TODO: Implement!
-  if (results == NULL) {
-    printf("simulation without results!\n");
+  if (simulation_results != NULL) {
+    printf("simulation with results!\n");
   }
 }
 
 static void run_simulations(int32_t simulations_count) {
+  struct SimulationResults* all_simulation_results =
+      calloc(simulations_count, sizeof(struct SimulationResults));
   for (int32_t i = 0; i < simulations_count; i++) {
-    run_simulation(NULL);
+    run_simulation(&(all_simulation_results[i]));
   }
+  // TODO: Calculate averages and print.
+  free(all_simulation_results);
 }
 
 int main(void) {
