@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-// TODO: Move to the root and make it so each year's data is either loaded and
-// parsed or #included.
+// TODO: Make it so each year's data is either loaded and parsed or #included.
 
 // TODO: Delete Python programs, but keep their simulations.
 
