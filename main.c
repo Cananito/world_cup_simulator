@@ -19,8 +19,21 @@ struct CountryElo {
   uint16_t elo_rating;
 };
 
+struct Match {
+  struct Country const* home_team;
+  struct Country const* away_team;
+  struct Country const* winner;
+  int8_t home_goals;
+  int8_t away_goals;
+};
+
+struct Simulation {
+  // (3 games/group * 12 groups) = 36 group stage matches + 32 knockout = 68
+  struct Match matches[68];
+};
+
 enum Placement {
-  FORTYEIGTH_PLACE, // Eliminated in group stage.
+  FORTYEIGTH_PLACE,
   THIRTYSECOND_PLACE, // Eliminated in round of 32.
   SIXTEENTH_PLACE, // Eliminated in round of 16.
   EITH_PLACE, // Eliminated in quarterfinals.
@@ -30,13 +43,16 @@ enum Placement {
   FIRST_PLACE, // Won final.
 };
 
-struct CountryResult {
+struct CountryPlacements {
   struct Country const* country;
-  enum Placement placement;
-};
-
-struct SimulationResults {
-  struct CountryResult country_results[COUNTRY_COUNT];
+  uint16_t forty_eight_place; // Eliminated in group stage.
+  uint16_t thirty_second_place; // Eliminated in round of 32.
+  uint16_t sixteenth_place; // Eliminated in round of 16.
+  uint16_t eith_place; // Eliminated in quarterfinals.
+  uint16_t fourth_place; // Lost third place match.
+  uint16_t third_place; // Won third place match.
+  uint16_t second_place; // Lost final.
+  uint16_t first_place; // Won final.
 };
 
 struct Country const algeria = { .country_name = "Algeria" };
@@ -134,24 +150,60 @@ struct CountryElo country_elos[COUNTRY_COUNT] = {
   { .country = &uzbekistan, .elo_rating = 0 },
 };
 
-static void run_simulation(struct SimulationResults* simulation_results) {
+static void run_simulation(struct Simulation* simulation, struct CountryPlacements* country_placements) {
   // TODO: Implement!
-  if (simulation_results != NULL) {
-    printf("simulation with results!\n");
-  }
-}
 
-static void run_simulations(int32_t simulations_count) {
-  struct SimulationResults* all_simulation_results =
-      calloc(simulations_count, sizeof(struct SimulationResults));
-  for (int32_t i = 0; i < simulations_count; i++) {
-    run_simulation(&(all_simulation_results[i]));
+  simulation->matches[67] = (struct Match){
+    .home_team = &england,
+    .away_team = &usa,
+    .home_goals = 7,
+    .away_goals = 0,
+    .winner = &england,
+  };
+
+  for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
+    if (country_placements[i].country == &england) {
+      country_placements[i].first_place += 1;
+    }
+    if (country_placements[i].country == &usa) {
+      country_placements[i].second_place += 1;
+    }
   }
-  // TODO: Calculate averages and print.
-  free(all_simulation_results);
 }
 
 int main(void) {
-  run_simulations(5); // TODO: Change to 100000.
+  uint32_t simulations_count = 5; // TODO: Change to 100000.
+
+  // Initialize country placements.
+  struct CountryPlacements country_placements[COUNTRY_COUNT] = { 0 };
+  for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
+    country_placements[i].country = country_elos[i].country;
+  }
+
+  // Run simulations.
+  struct Simulation* all_simulations =
+      calloc(simulations_count, sizeof(struct Simulation));
+  for (uint32_t i = 0; i < simulations_count; i++) {
+    run_simulation(&(all_simulations[i]), country_placements);
+  }
+  free(all_simulations);
+
+  // TODO: Calculate averages and print.
+  printf("      Country   48th   32nd   16th    8th    4th    3rd    2nd    1st\n");
+  for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
+    struct CountryPlacements country_placement = country_placements[i];
+    printf("%13s %6d %6d %6d %6d %6d %6d %6d %6d\n",
+           country_placement.country->country_name,
+           country_placement.forty_eight_place,
+           country_placement.thirty_second_place,
+           country_placement.sixteenth_place,
+           country_placement.eith_place,
+           country_placement.fourth_place,
+           country_placement.third_place,
+           country_placement.second_place,
+           country_placement.first_place
+           );
+  }
+
   return 0;
 }
