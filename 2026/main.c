@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdint.h>
 
+// TODO: Move to the root and make it so each year's data is either loaded and
+// parsed or #included.
+
+// TODO: Delete Python programs, but keep their simulations.
+
 // Elo ratings: https://www.eloratings.net/
 
 struct Country {
@@ -10,6 +15,17 @@ struct Country {
 struct CountryElo {
   struct Country country;
   uint16_t elo_rating;
+};
+
+enum Placement {
+  FORTYEIGTH_PLACE, // Eliminated in group stage.
+  THIRTYSECOND_PLACE, // Eliminated in round of 32.
+  SIXTEENTH_PLACE, // Eliminated in round of 16.
+  EITH_PLACE, // Eliminated in quarterfinals.
+  FOURTH_PLACE, // Lost third place match.
+  THIRD_PLACE, // Won third place match.
+  SECOND_PLACE, // Lost final.
+  FIRST_PLACE, // Won final.
 };
 
 struct Country const algeria = { .country_name = "Algeria" };
@@ -61,7 +77,7 @@ struct Country const uzbekistan = { .country_name = "Uzbekistan" };
 // { .country_name = "<IC Path 1 winner>" };
 // { .country_name = "<IC Path 2 winner>" },
 
-struct CountryElo country_elos[48] = {
+struct CountryElo country_elos[] = {
   { .country = australia, .elo_rating = 0 },
   { .country = algeria, .elo_rating = 0 },
   { .country = argentina, .elo_rating = 0 },
@@ -107,7 +123,20 @@ struct CountryElo country_elos[48] = {
   { .country = uzbekistan, .elo_rating = 0 },
 };
 
+static void run_simulation(void* results) {
+  // TODO: Implement!
+  if (results == NULL) {
+    printf("simulation without results!\n");
+  }
+}
+
+static void run_simulations(int32_t simulations_count) {
+  for (int32_t i = 0; i < simulations_count; i++) {
+    run_simulation(NULL);
+  }
+}
+
 int main(void) {
-  printf("Coming soon...\n");
+  run_simulations(5); // TODO: Change to 100000.
   return 0;
 }
