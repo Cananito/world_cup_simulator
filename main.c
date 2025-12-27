@@ -28,22 +28,19 @@ struct Match {
 };
 
 struct Simulation {
-  // (3 games/group * 12 groups) = 36 group stage matches + 32 knockout = 68
-  struct Match matches[68];
+  // (6 games/group * 12 groups) = 72 group stage matches + 32 knockout = 104
+  struct Match matches[104];
 };
 
-enum Placement {
-  FORTYEIGTH_PLACE,
-  THIRTYSECOND_PLACE, // Eliminated in round of 32.
-  SIXTEENTH_PLACE, // Eliminated in round of 16.
-  EITH_PLACE, // Eliminated in quarterfinals.
-  FOURTH_PLACE, // Lost third place match.
-  THIRD_PLACE, // Won third place match.
-  SECOND_PLACE, // Lost final.
-  FIRST_PLACE, // Won final.
+struct GroupStageAccumulatedPlacements {
+  struct Country const* country;
+  uint16_t fourth_place;
+  uint16_t third_place;
+  uint16_t second_place;
+  uint16_t first_place;
 };
 
-struct CountryPlacements {
+struct CountryAccumulatedPlacements {
   struct Country const* country;
   uint16_t forty_eight_place; // Eliminated in group stage.
   uint16_t thirty_second_place; // Eliminated in round of 32.
@@ -150,7 +147,8 @@ struct CountryElo country_elos[COUNTRY_COUNT] = {
   { .country = &uzbekistan, .elo_rating = 0 },
 };
 
-static void run_simulation(struct Simulation* simulation, struct CountryPlacements* country_placements) {
+static void run_simulation(struct Simulation* simulation,
+                           struct CountryAccumulatedPlacements* cap_array) {
   // TODO: Implement!
 
   simulation->matches[67] = (struct Match){
@@ -162,46 +160,72 @@ static void run_simulation(struct Simulation* simulation, struct CountryPlacemen
   };
 
   for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
-    if (country_placements[i].country == &england) {
-      country_placements[i].first_place += 1;
+    if (cap_array[i].country == &england) {
+      cap_array[i].first_place += 1;
     }
-    if (country_placements[i].country == &usa) {
-      country_placements[i].second_place += 1;
+    if (cap_array[i].country == &usa) {
+      cap_array[i].second_place += 1;
     }
   }
+}
+
+static float percentage_from_total(uint16_t total, uint32_t simulations_count) {
+  return (total * 100) / simulations_count;
 }
 
 int main(void) {
   uint32_t simulations_count = 5; // TODO: Change to 100000.
 
-  // Initialize country placements.
-  struct CountryPlacements country_placements[COUNTRY_COUNT] = { 0 };
+  // Initialize country accumulated placements array.
+  struct CountryAccumulatedPlacements cap_array[COUNTRY_COUNT] = { 0 };
   for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
-    country_placements[i].country = country_elos[i].country;
+    cap_array[i].country = country_elos[i].country;
   }
 
   // Run simulations.
   struct Simulation* all_simulations =
       calloc(simulations_count, sizeof(struct Simulation));
   for (uint32_t i = 0; i < simulations_count; i++) {
-    run_simulation(&(all_simulations[i]), country_placements);
+    run_simulation(&(all_simulations[i]), cap_array);
   }
   free(all_simulations);
 
-  // TODO: Calculate averages and print.
-  printf("      Country   48th   32nd   16th    8th    4th    3rd    2nd    1st\n");
+  // TODO: Print group stage placement percentages.
+
+  // TODO: Sort country_accumulated_placements so most winner is printed first.
+
+  // Print placement percentages.
+  printf("      Country    48th    32nd    16th     8th     4th     3rd     "
+         "2nd     1st\n");
   for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
-    struct CountryPlacements country_placement = country_placements[i];
-    printf("%13s %6d %6d %6d %6d %6d %6d %6d %6d\n",
-           country_placement.country->country_name,
-           country_placement.forty_eight_place,
-           country_placement.thirty_second_place,
-           country_placement.sixteenth_place,
-           country_placement.eith_place,
-           country_placement.fourth_place,
-           country_placement.third_place,
-           country_placement.second_place,
-           country_placement.first_place
+    struct CountryAccumulatedPlacements country_accumulated_placements =
+        cap_array[i];
+    printf("%13s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",
+           country_accumulated_placements.country->country_name,
+           percentage_from_total(
+               country_accumulated_placements.forty_eight_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.thirty_second_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.sixteenth_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.eith_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.fourth_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.third_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.second_place,
+               simulations_count),
+           percentage_from_total(
+               country_accumulated_placements.first_place,
+               simulations_count)
            );
   }
 
