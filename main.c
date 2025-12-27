@@ -9,11 +9,16 @@
 // Elo ratings: https://www.eloratings.net/
 
 #define COUNTRY_COUNT 48
+#define GROUP_COUNT 12
 
 struct Country {
-  char country_name[20];
+  char name[20];
   uint16_t elo_rating;
   // TODO: Group stage identifier?
+};
+
+struct Group {
+  char name[8];
 };
 
 struct Match {
@@ -50,179 +55,179 @@ struct CountryAccumulatedPlacements {
 };
 
 struct Country const algeria = {
-  .country_name = "Algeria",
+  .name = "Algeria",
   .elo_rating = 0,
 };
 struct Country const argentina = {
-  .country_name = "Argentina",
+  .name = "Argentina",
   .elo_rating = 0,
 };
 struct Country const australia = {
-  .country_name = "Australia",
+  .name = "Australia",
   .elo_rating = 0,
 };
 struct Country const austria = {
-  .country_name = "Austria",
+  .name = "Austria",
   .elo_rating = 0,
 };
 struct Country const belgium = {
-  .country_name = "Belgium",
+  .name = "Belgium",
   .elo_rating = 0,
 };
 struct Country const brazil = {
-  .country_name = "Brazil",
+  .name = "Brazil",
   .elo_rating = 0,
 };
 struct Country const canada = {
-  .country_name = "Canada",
+  .name = "Canada",
   .elo_rating = 0,
 };
 struct Country const cape_verde = {
-  .country_name = "Cape Verde",
+  .name = "Cape Verde",
   .elo_rating = 0,
 };
 struct Country const colombia = {
-  .country_name = "Colombia",
+  .name = "Colombia",
   .elo_rating = 0,
 };
 struct Country const croatia = {
-  .country_name = "Croatia",
+  .name = "Croatia",
   .elo_rating = 0,
 };
 struct Country const curacao = {
-  .country_name = "Curacao",
+  .name = "Curacao",
   .elo_rating = 0,
 };
 struct Country const ecuador = {
-  .country_name = "Ecuador",
+  .name = "Ecuador",
   .elo_rating = 0,
 };
 struct Country const egypt = {
-  .country_name = "Egypt",
+  .name = "Egypt",
   .elo_rating = 0,
 };
 struct Country const england = {
-  .country_name = "England",
+  .name = "England",
   .elo_rating = 0,
 };
 struct Country const france = {
-  .country_name = "France",
+  .name = "France",
   .elo_rating = 0,
 };
 struct Country const germany = {
-  .country_name = "Germany",
+  .name = "Germany",
   .elo_rating = 0,
 };
 struct Country const ghana = {
-  .country_name = "Ghana",
+  .name = "Ghana",
   .elo_rating = 0,
 };
 struct Country const haiti = {
-  .country_name = "Haiti",
+  .name = "Haiti",
   .elo_rating = 0,
 };
 struct Country const iran = {
-  .country_name = "Iran",
+  .name = "Iran",
   .elo_rating = 0,
 };
 struct Country const ivory_coast = {
-  .country_name = "Ivory Coast",
+  .name = "Ivory Coast",
   .elo_rating = 0,
 };
 struct Country const japan = {
-  .country_name = "Japan",
+  .name = "Japan",
   .elo_rating = 0,
 };
 struct Country const jordan = {
-  .country_name = "Jordan",
+  .name = "Jordan",
   .elo_rating = 0,
 };
 struct Country const mexico = {
-  .country_name = "Mexico",
+  .name = "Mexico",
   .elo_rating = 0,
 };
 struct Country const moroco = {
-  .country_name = "Moroco",
+  .name = "Moroco",
   .elo_rating = 0,
 };
 struct Country const netherlands = {
-  .country_name = "Netherlands",
+  .name = "Netherlands",
   .elo_rating = 0,
 };
 struct Country const new_zeland = {
-  .country_name = "New Zeland",
+  .name = "New Zeland",
   .elo_rating = 0,
 };
 struct Country const norway = {
-  .country_name = "Norway",
+  .name = "Norway",
   .elo_rating = 0,
 };
 struct Country const panama = {
-  .country_name = "Panama",
+  .name = "Panama",
   .elo_rating = 0,
 };
 struct Country const paraguay = {
-  .country_name = "Paraguay",
+  .name = "Paraguay",
   .elo_rating = 0,
 };
 struct Country const portugal = {
-  .country_name = "Portugal",
+  .name = "Portugal",
   .elo_rating = 0,
 };
 struct Country const qatar = {
-  .country_name = "Qatar",
+  .name = "Qatar",
   .elo_rating = 0,
 };
 struct Country const saudi_arabia = {
-  .country_name = "Saudi Arabia",
+  .name = "Saudi Arabia",
   .elo_rating = 0,
 };
 struct Country const scotland = {
-  .country_name = "Scotland",
+  .name = "Scotland",
   .elo_rating = 0,
 };
 struct Country const senegal = {
-  .country_name = "Senegal",
+  .name = "Senegal",
   .elo_rating = 0,
 };
 struct Country const south_africa = {
-  .country_name = "South Africa",
+  .name = "South Africa",
   .elo_rating = 0,
 };
 struct Country const south_korea = {
-  .country_name = "South Korea",
+  .name = "South Korea",
   .elo_rating = 0,
 };
 struct Country const spain = {
-  .country_name = "Spain",
+  .name = "Spain",
   .elo_rating = 0,
 };
 struct Country const switzerland = {
-  .country_name = "Switzerland",
+  .name = "Switzerland",
   .elo_rating = 0,
 };
 struct Country const tunisia = {
-  .country_name = "Tunisia",
+  .name = "Tunisia",
   .elo_rating = 0,
 };
 struct Country const uruguay = {
-  .country_name = "Uruguay",
+  .name = "Uruguay",
   .elo_rating = 0,
 };
 struct Country const usa = {
-  .country_name = "USA",
+  .name = "USA",
   .elo_rating = 0,
 };
 struct Country const uzbekistan = {
-  .country_name = "Uzbekistan",
+  .name = "Uzbekistan",
   .elo_rating = 0,
 };
-// { .country_name = "<UEFA Path A winner>", .elo_rating = 0 };
-// { .country_name = "<UEFA Path B winner>", .elo_rating = 0 };
-// { .country_name = "<UEFA Path C winner>", .elo_rating = 0 };
-// { .country_name = "<UEFA Path D winner>", .elo_rating = 0 };
-// { .country_name = "<IC Path 1 winner>", .elo_rating = 0 };
-// { .country_name = "<IC Path 2 winner>", .elo_rating = 0 },
+// { .name = "<UEFA Path A winner>", .elo_rating = 0 };
+// { .name = "<UEFA Path B winner>", .elo_rating = 0 };
+// { .name = "<UEFA Path C winner>", .elo_rating = 0 };
+// { .name = "<UEFA Path D winner>", .elo_rating = 0 };
+// { .name = "<IC Path 1 winner>", .elo_rating = 0 };
+// { .name = "<IC Path 2 winner>", .elo_rating = 0 },
 
 struct Country const* countries[COUNTRY_COUNT] = {
   &australia,
@@ -270,11 +275,74 @@ struct Country const* countries[COUNTRY_COUNT] = {
   &uzbekistan,
 };
 
+struct Group const group_a = {
+  .name = "Group A",
+};
+
+struct Group const group_b = {
+  .name = "Group B",
+};
+
+struct Group const group_c = {
+  .name = "Group C",
+};
+
+struct Group const group_d = {
+  .name = "Group D",
+};
+
+struct Group const group_e = {
+  .name = "Group E",
+};
+
+struct Group const group_f = {
+  .name = "Group F",
+};
+
+struct Group const group_g = {
+  .name = "Group G",
+};
+
+struct Group const group_h = {
+  .name = "Group H",
+};
+
+struct Group const group_i = {
+  .name = "Group I",
+};
+
+struct Group const group_j = {
+  .name = "Group J",
+};
+
+struct Group const group_k = {
+  .name = "Group K",
+};
+
+struct Group const group_l = {
+  .name = "Group L",
+};
+
+struct Group const* groups[GROUP_COUNT] = {
+  &group_a,
+  &group_b,
+  &group_c,
+  &group_d,
+  &group_e,
+  &group_f,
+  &group_g,
+  &group_h,
+  &group_i,
+  &group_j,
+  &group_k,
+  &group_l,
+};
+
 static void run_simulation(struct Simulation* simulation,
                            struct CountryAccumulatedPlacements* cap_array) {
   // TODO: Implement!
 
-  simulation->matches[67] = (struct Match){
+  simulation->matches[103] = (struct Match){
     .home_team = &england,
     .away_team = &usa,
     .home_goals = 7,
@@ -296,14 +364,24 @@ static float percentage_from_total(uint16_t total, uint32_t simulations_count) {
   return (total * 100) / simulations_count;
 }
 
-static void print_placement_percentages(struct CountryAccumulatedPlacements *cap_array, uint32_t simulations_count) {
+static void print_group_stage_placement_percentages() {
+  for (uint8_t i = 0; i < GROUP_COUNT; i++) {
+    struct Group const* group = groups[i];
+    printf("%s\n", group->name);
+    // TODO: Print the table, sorted by most winner.
+  }
+}
+
+static void print_placement_percentages(
+    struct CountryAccumulatedPlacements *cap_array,
+    uint32_t simulations_count) {
   printf("      Country    48th    32nd    16th     8th     4th     3rd     "
          "2nd     1st\n");
   for (uint16_t i = 0; i < COUNTRY_COUNT; i++) {
     struct CountryAccumulatedPlacements country_accumulated_placements =
         cap_array[i];
     printf("%13s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",
-           country_accumulated_placements.country->country_name,
+           country_accumulated_placements.country->name,
            percentage_from_total(
                country_accumulated_placements.forty_eight_place,
                simulations_count),
@@ -349,10 +427,15 @@ int main(void) {
   }
   free(all_simulations);
 
-  // TODO: Print group stage placement percentages.
-
   // TODO: Sort cap_array so the most winner is printed first.
 
+  printf("> Group stage results\n");
+  printf("\n");
+  print_group_stage_placement_percentages();
+  printf("\n");
+  printf("\n");
+  printf("> Winning probabilities\n");
+  printf("\n");
   print_placement_percentages(cap_array, simulations_count);
 
   return 0;
