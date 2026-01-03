@@ -6,6 +6,8 @@
 
 // TODO: Delete Python programs, but keep their simulations.
 
+// TODO: Update simulation result file dirs to /simulations/yyyy/*.txt
+
 // Elo ratings: https://www.eloratings.net/
 // 2026 Wiki: https://en.wikipedia.org/wiki/2026_FIFA_World_Cup
 // Regulations PDF: https://digitalhub.fifa.com/m/636f5c9c6f29771f/original/FWC2026_regulations_EN.pdf
